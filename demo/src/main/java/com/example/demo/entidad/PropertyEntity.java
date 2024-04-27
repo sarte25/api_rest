@@ -5,11 +5,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-public class propiedad {
+public class PropertyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,11 +33,11 @@ public class propiedad {
     @NotNull(message = "La fecha de creacion no puede ser nulo")
     private LocalDateTime createdAt;
 
-    public propiedad() {
+    public PropertyEntity() {
 
     }
 
-    public propiedad(long id, String nombre, String ubicacion, String imageurl, boolean disponibilidad, double precio, LocalDateTime createdAt) {
+    public PropertyEntity(long id, String nombre, String ubicacion, String imageurl, boolean disponibilidad, double precio, LocalDateTime createdAt) {
         this.id = id;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
@@ -64,7 +63,7 @@ public class propiedad {
         return imageurl;
     }
 
-    public boolean isDisponibilidad() {
+    public boolean getDisponibilidad() {
         return disponibilidad;
     }
 
@@ -103,4 +102,6 @@ public class propiedad {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+
 }
